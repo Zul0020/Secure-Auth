@@ -16,13 +16,12 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 // CORS configuration
 const corsOptions = {
   origin: NODE_ENV === 'production' 
-    ? ['https://your-frontend-domain.com', 'https://www.your-frontend-domain.com'] 
-    : 'http://localhost:5500',
+    ? ['https://your-frontend-domain.netlify.app', 'http://127.0.0.1:5500', 'http://localhost:5500'] 
+    : ['http://127.0.0.1:5500', 'http://localhost:5500'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
 };
-
 // Middleware
 app.use(cors(corsOptions));
 app.use(express.json());
