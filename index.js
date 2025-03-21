@@ -16,7 +16,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 // CORS configuration
 const corsOptions = {
   origin: NODE_ENV === 'production' 
-    ? ['https://secureauth01.netlify.app/', 'http://127.0.0.1:5500', 'http://localhost:5500'] 
+    ? ['https://secureauth01.netlify.app', 'http://127.0.0.1:5500', 'http://localhost:5500'] 
     : ['http://127.0.0.1:5500', 'http://localhost:5500'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
